@@ -1,5 +1,6 @@
 package io.icker.factions.util;
 
+import io.icker.factions.FactionsMod;
 import io.icker.factions.api.persistents.Faction;
 import io.icker.factions.api.persistents.User;
 
@@ -108,11 +109,10 @@ public class Message {
                 new Message()
                         .add(
                                 new Message(
-                                                faction.getColor().toString()
-                                                        + ChatFormatting.BOLD
-                                                        + faction.getName())
+                                                FactionsMod.CONFIG.DISPLAY.FACTION_PREFIX
+                                                        .replace("{color}", faction.getColor().toString())
+                                                        .replace("{name}", faction.getName()))
                                         .hover(faction.getDescription()))
-                        .filler("»")
                         .raw()
                         .append(text);
         return this;

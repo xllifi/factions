@@ -113,6 +113,9 @@ public class Config {
     public String LANGUAGE = "en_us";
 
     public static class DisplayConfig {
+        @SerializedName("factionPrefix")
+        public String FACTION_PREFIX = "{color}§l{name} §r§8»§r ";
+
         @SerializedName("factionNameMaxLength")
         public int NAME_MAX_LENGTH = -1;
 
